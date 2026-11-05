@@ -20,3 +20,5 @@ set(BasicUT_TESTS_SRCS
 add_executable(BasicUTRunner 
     ${BasicUT_TESTS_SRCS}
 )
+
+add_test(NAME BasicUTRunner COMMAND BasicUTRunner)

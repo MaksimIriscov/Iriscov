@@ -1,13 +1,16 @@
-cmake_minimum_required(VERSION 3.10) # Минимальная версия CMake генератора
+cmake_minimum_required(VERSION 3.10)
 
-project(EnvironmentTest) # Наименование проекта
+project(AIP VERSION "1.0")
 
-# Список файлов с исходниками
-set(EnvironmentTest_SRC
-    src/main.cpp
-)
+set(CMAKE_CXX_STANDARD 17)          # Стандарт языка C++17
+set(CMAKE_CXX_STANDARD_REQUIRED ON) # Стандарт обязателен
 
-# Исходники будут скомпилированы в исполняемый файл
-add_executable(EnvironmentTest
-	${EnvironmentTest_SRC}
-)
+include(CTest) # Подключение модуля тестирования CTest
+
+if(NOT DEFINED ENV{WORKSDK})
+    message(FATAL_ERROR "Environment variable WORKSDK is not set.")
+endif()
+
+# Подпроекты
+add_subdirectory(BasicUT)
+add_subdirectory(EnvironmentTest)
