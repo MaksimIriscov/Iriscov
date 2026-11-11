@@ -15,3 +15,10 @@
 **Расположение исполняемого файла:** *
 `build\Debug\EnvironmentTest.exe`
 
+## Вариант 1. Информация о сборке
+
+### Вывод конфигурации Debug
+![Вывод Debug](images/debug_output.png)
+
+### Вывод конфигурации Release
+![Вывод Release](images/release_output.png)
